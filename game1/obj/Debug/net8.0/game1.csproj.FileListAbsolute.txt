@@ -13,3 +13,18 @@ C:\Users\Academy\Desktop\Тимофеев VS Code\first_project\game1\obj\Debug\
 C:\Users\Academy\Desktop\Тимофеев VS Code\first_project\game1\obj\Debug\net8.0\game1.pdb
 C:\Users\Academy\Desktop\Тимофеев VS Code\first_project\game1\obj\Debug\net8.0\game1.genruntimeconfig.cache
 C:\Users\Academy\Desktop\Тимофеев VS Code\first_project\game1\obj\Debug\net8.0\ref\game1.dll
+C:\Users\Academy\Documents\first_project\game1\bin\Debug\net8.0\game1.exe
+C:\Users\Academy\Documents\first_project\game1\bin\Debug\net8.0\game1.deps.json
+C:\Users\Academy\Documents\first_project\game1\bin\Debug\net8.0\game1.runtimeconfig.json
+C:\Users\Academy\Documents\first_project\game1\bin\Debug\net8.0\game1.dll
+C:\Users\Academy\Documents\first_project\game1\bin\Debug\net8.0\game1.pdb
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\game1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\game1.AssemblyInfoInputs.cache
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\game1.AssemblyInfo.cs
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\game1.csproj.CoreCompileInputs.cache
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\game1.sourcelink.json
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\game1.dll
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\refint\game1.dll
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\game1.pdb
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\game1.genruntimeconfig.cache
+C:\Users\Academy\Documents\first_project\game1\obj\Debug\net8.0\ref\game1.dll

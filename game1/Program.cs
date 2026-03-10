@@ -10,3 +10,8 @@ class Game
 {
     
 }
+
+class Game1
+{
+    
+}

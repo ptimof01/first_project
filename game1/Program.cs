@@ -10,3 +10,12 @@ class Game
 {
     
 }
+
+class Game1
+{
+    
+}
+public class Player
+{
+    
+}

@@ -10,3 +10,8 @@ class Game
 {
     
 }
+
+public class Player
+{
+    
+}

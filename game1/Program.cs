@@ -36,9 +36,6 @@ static void Main()
         }
     }
 }
-
-
-
 public class Item
 {
     
@@ -46,30 +43,7 @@ public class Item
 
 public class Enemy
 {
-    public string Name { get; set; }
-    public int Health { get; set; }
-    public int AttackPower { get; set; }
-    public int ExpReward { get; set; }
-
-            public Enemy(string name, int health, int attackPower, int expReward)
-            {
-                Name = name;
-                Health = health;
-                AttackPower = attackPower;
-                ExpReward = expReward;
-            }
-             public void Attack(Player player) //бьёт игрок
-            {
-                player.TakeDamage(AttackPower);
-            }
-            public void TakeDamage(int damage) //моб получает урон
-            {
-                Health -= damage;
-            }
-            public bool IsAlive() //проверка жив ли моб
-            {
-                return Health<0;
-            }
+    
 }
 public class Player
 {
@@ -153,16 +127,7 @@ public class Player
        
     }
 }
-public class Item
+public class Locations
 {
-    public string Name { get; set; }
-    public int Price { get; set; }
-    public int Effect { get; set; }
     
-        public Item(string name, int price, int effect)
-    {
-        Name = name;
-        Price = price;
-        Effect = effect;
-    }
 }

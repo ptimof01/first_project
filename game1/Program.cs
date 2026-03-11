@@ -1,10 +1,11 @@
-using Microsoft.VisualBasic;
 using System;
-
+using System.Collections.Generic;
+using System.Threading;
+//переписать main с использованием сохранений, просто перетыкать сверху меню загрузки. 1-новое приключение, 2-загрузка персонажа.  // player = SaveSys.LoadGame(); \\
 static void Main()
 {
 
-    Console.WriteLine("----Добро пожаловать в сногсшибательную игру 'УльтраМегаГигаХроносАгония: Эпоха Древних Богов и Великих Королевств----'!\n");
+    Console.WriteLine("----Добро пожаловать в сногсшибательную игру 'УльтраМегаГигаХроноРазлом: Эпоха Древних Богов и Великих Королевств----'!\n");
     Console.WriteLine("1.Игра");
     Console.WriteLine("2.Магазин");
     Console.WriteLine("3.Выйти из игры");
@@ -36,15 +37,7 @@ static void Main()
         }
     }
 }
-public class Item
-{
-    
-}
 
-public class Enemy
-{
-    
-}
 public class Player
 {
     // Свойства и характеристкики класса Player
@@ -130,4 +123,60 @@ public class Player
 public class Locations
 {
     
+}
+public class Item
+{
+    
+}
+
+public class Enemy
+{
+    
+}
+
+public class SaveSys
+{
+    private static string savePath = "savegame.txt"; 
+
+    public static void SaveGame(Player player)
+    {
+        using(StreamWriter writer = new StreamWriter(savePath))
+        {
+            writer.WriteLine(player.Name);
+            writer.WriteLine(player.Level);
+            writer.WriteLine(player.Exp);
+            writer.WriteLine(player.Gold);
+            writer.WriteLine(player.Health);
+            writer.WriteLine(player.MaxHealth);
+            writer.WriteLine(player.AttackPower);
+        }
+        Console.WriteLine("Игра сохранена");
+    }
+    
+    public static Player LoadGame()
+    {
+        if (!File.Exists(savePath)) 
+            return null;
+        
+        using(StreamReader reader = new StreamReader(savePath)) 
+        {
+            string name = reader.ReadLine();
+            int level = int.Parse(reader.ReadLine());
+            int exp = int.Parse(reader.ReadLine());
+            int gold = int.Parse(reader.ReadLine());
+            int health = int.Parse(reader.ReadLine());
+            int maxHealth = int.Parse(reader.ReadLine());
+            int attackPower = int.Parse(reader.ReadLine());
+
+            return new Player(name)
+            {
+                Level = level,
+                Exp = exp,
+                Gold = gold,
+                Health = health,
+                MaxHealth = maxHealth,
+                AttackPower = attackPower
+            };
+        }
+    }
 }

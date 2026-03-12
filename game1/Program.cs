@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading;
+using System.IO;
 //переписать main с использованием сохранений, просто перетыкать сверху меню загрузки. 1-новое приключение, 2-загрузка персонажа.  // player = SaveSys.LoadGame(); \\
 static void Main()
 {
@@ -159,7 +160,8 @@ public class Enemy
 
 public class SaveSys
 {
-    private static string savePath = "savegame.txt"; 
+    private static string savePath = "C:\\Users\\Academy\\AppData\\Local\\textRPG"; 
+    
 
     public static void SaveGame(Player player)
     {
@@ -179,6 +181,7 @@ public class SaveSys
     public static Player LoadGame()
     {
         if (!File.Exists(savePath)) 
+
             return null;
         
         using(StreamReader reader = new StreamReader(savePath)) 

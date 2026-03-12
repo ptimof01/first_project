@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading;
 //переписать main с использованием сохранений, просто перетыкать сверху меню загрузки. 1-новое приключение, 2-загрузка персонажа.  // player = SaveSys.LoadGame(); \\
 static void Main()
@@ -124,9 +125,22 @@ public class Locations
 {
     
 }
+// предметы 
 public class Item
 {
-    
+    public string Name;
+    public int Price;
+    public int Attack;
+    public int Level;
+    public float Weight;
+    public Item(string name,int price,int attack,int level,float weight)
+    {
+        Name = name; // Название 
+        Price = price; // Цена
+        Attack= attack; // Сила Атаки
+        Level = level; // Начальный Уровень
+        Weight = weight; // Вес
+    }
 }
 
 public class Enemy

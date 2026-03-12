@@ -75,7 +75,8 @@ public class Player
         enemy.Damage= 10;
         enemy.HP= 100;
         enemy.replic = ["axaxахах","арг"];
-        enemy.TakeDamage(AttackPower); // Наносим урон противнику
+        
+        enemy.takedam(AttackPower); // Наносим урон противнику
 
         if ((enemy.HP < 0) || (enemy.HP == 0))
         {
@@ -178,7 +179,7 @@ public class Enemy
         a += drop;
         return a & s;
     }
-    public int TakeDamage(int a)
+    public int takedam(int a)
     {
         HP-=a;
         return HP;

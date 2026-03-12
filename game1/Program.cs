@@ -149,7 +149,7 @@ public class Item
         Price = price; // Цена
         Attack= attack; // Сила Атаки
         Level = level; // Начальный Уровень
-        Weight = weight; // Вес
+        Weight = weight; // вес
     }
 }
 

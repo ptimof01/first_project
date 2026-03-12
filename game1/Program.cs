@@ -4,7 +4,6 @@ using System.Threading;
 //переписать main с использованием сохранений, просто перетыкать сверху меню загрузки. 1-новое приключение, 2-загрузка персонажа.  // player = SaveSys.LoadGame(); \\
 static void Main()
 {
-
     Console.WriteLine("----Добро пожаловать в сногсшибательную игру 'УльтраМегаГигаХроноРазлом: Эпоха Древних Богов и Великих Королевств----'!\n");
     Console.WriteLine("1.Игра");
     Console.WriteLine("2.Магазин");
@@ -17,11 +16,11 @@ static void Main()
         switch (choise)
         {
             case 1:
-        
+                
             break;
 
             case 2:
-        
+
             break;
 
             case 3:
@@ -65,7 +64,7 @@ public class Player
     // Метод атаки врага
     public void Attack(Enemy enemy) 
     {
-       enemy.TakeDamage(AttackPower); // Наносим урон противнику
+       //enemy.TakeDamage(AttackPower); // Наносим урон противнику
     }
     // Метод получения урона от врага
     public void TakeDamage(int damage) 
@@ -89,17 +88,27 @@ public class Player
     }
      public void LevelUp()
     {
-        Level++;                               // Увеличиваем уровень на 1
-        if (Level > 60) Level = 60;             // Максимальный уровень - 60
+                                       
+        if (Level < 60)
+        {
+            Level++;                                       // Увеличиваем уровень на 1
+            MaxHealth += 10;                               // Увеличиваем максимальное здоровье на 10
+            AttackPower += 2;                              // Увеличиваем силу атаки на 2
+            Health = MaxHealth;                            // Восстанавливаем здоровье до максимума
+            ExpToNextLevel = (int)(ExpToNextLevel * 1.5);  // Увеличиваем требуемый опыт в 1.5 раза
 
-        MaxHealth += 10;                        // Увеличиваем максимальное здоровье на 10
-        AttackPower += 2;                        // Увеличиваем силу атаки на 2
-        Health = MaxHealth;                       // Восстанавливаем здоровье до максимума
-        ExpToNextLevel = (int)(ExpToNextLevel * 1.5);  // Увеличиваем требуемый опыт в 1.5 раза
+            // Выводим сообщение о повышении уровня
+            Console.WriteLine($"УРОВЕНЬ ПОВЫШЕН! Теперь уровень {Level}!");
+            Console.WriteLine($"Макс. здоровье: +10 | Атака: +2");
+        }
+        else  // Максимальный уровень - 60
+        {
+            Console.WriteLine($"У вас максимальный уровень!");
+        }       
 
-        // Выводим сообщение о повышении уровня
-        Console.WriteLine($"УРОВЕНЬ ПОВЫШЕН! Теперь уровень {Level}!");
-        Console.WriteLine($"Макс. здоровье: +10 | Атака: +2");
+        
+
+        
     }
     // Метод добавления опыта
     public void AddExp(int amount)
@@ -114,11 +123,11 @@ public class Player
             LevelUp();                               // Повышаем уровень
         }
     }
-    // Метод для отображения прогресс-бара опыта(потом допишу, пока что не придумал нормальную концепцию)
-    public string GetExpBar()
-    {
+        // Метод для отображения прогресс-бара опыта(потом допишу, пока что не придумал нормальную концепцию)
+    //public string GetExpBar()
+    //{
        
-    }
+    //}
 }
 public class Locations
 {

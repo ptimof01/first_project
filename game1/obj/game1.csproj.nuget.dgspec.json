@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Academy\\Documents\\project1\\first_project\\game1\\game1.csproj": {}
+    "C:\\Users\\Academy\\Desktop\\Тимофеев VS Code\\first_project\\game1\\game1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Academy\\Documents\\project1\\first_project\\game1\\game1.csproj": {
+    "C:\\Users\\Academy\\Desktop\\Тимофеев VS Code\\first_project\\game1\\game1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Academy\\Documents\\project1\\first_project\\game1\\game1.csproj",
+        "projectUniqueName": "C:\\Users\\Academy\\Desktop\\Тимофеев VS Code\\first_project\\game1\\game1.csproj",
         "projectName": "game1",
-        "projectPath": "C:\\Users\\Academy\\Documents\\project1\\first_project\\game1\\game1.csproj",
+        "projectPath": "C:\\Users\\Academy\\Desktop\\Тимофеев VS Code\\first_project\\game1\\game1.csproj",
         "packagesPath": "C:\\Users\\Academy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Academy\\Documents\\project1\\first_project\\game1\\obj\\",
+        "outputPath": "C:\\Users\\Academy\\Desktop\\Тимофеев VS Code\\first_project\\game1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Academy\\AppData\\Roaming\\NuGet\\NuGet.Config",

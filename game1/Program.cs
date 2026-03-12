@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading;
 using System.IO;
+
 //переписать main с использованием сохранений, просто перетыкать сверху меню загрузки. 1-новое приключение, 2-загрузка персонажа.  // player = SaveSys.LoadGame(); \\
+
 static void Main()
 {
     Console.WriteLine("----Добро пожаловать в сногсшибательную игру 'УльтраМегаГигаХроноРазлом: Эпоха Древних Богов и Великих Королевств----'!\n");
@@ -41,51 +43,51 @@ static void Main()
 
 public class Player
 {
-    // Свойства и характеристкики класса Player
-    public string Name { get; set; } // Имя игрока
-    public int Health { get; set; } // Текущее здоровье игрока
-    public int MaxHealth { get; set; } // Максимальное здоровье игрока
-    public int AttackPower { get; set; } // Сила атаки
-    public int Gold { get; set; } // Количество золота
-    public int Level { get; set; } // Текущий уровень
-    public int Exp { get; set; } // Текущий опыт
+    
+    public string Name { get; set; } 
+    public int Health { get; set; } 
+    public int MaxHealth { get; set; } 
+    public int AttackPower { get; set; } 
+    public int Gold { get; set; } 
+    public int Level { get; set; } 
+    public int Exp { get; set; } 
     public int ExpToNextLevel { get; set; } // Опыта нужно для следующего уровня(для дальнейшей отрисовки прогрессбара лвла)
 
-    // Конструктор, вызывается при создании нового игрока
-        public Player(string name)
+  
+    public Player(string name)
     {
-        Name = name; // Присваивание имени
-        MaxHealth = 100; // Устанавливаем максимально здоровье
-        Health = MaxHealth; // Текущее здоровье приравниваем к максимальному
-        AttackPower = 30;  // Базовая сила атаки
-        Gold = 0; // Стартовое золото
-        Level = 1; // Начальный уровень
-        Exp = 0; // Начальное здоровье
-        ExpToNextLevel = 100; // Для одного уровня нужно 100 опыта
+        Name = name; 
+        MaxHealth = 100; 
+        Health = MaxHealth; 
+        AttackPower = 30; 
+        Gold = 0; 
+        Level = 1; 
+        Exp = 0; 
+        ExpToNextLevel = 100; 
     }   
-    // Метод атаки врага
+    
     public void Attack(Enemy enemy) 
     {
-       //enemy.TakeDamage(AttackPower); // Наносим урон противнику
+       enemy.TakeDamage(AttackPower); 
     }
-    // Метод получения урона от врага
+    
     public void TakeDamage(int damage) 
     {
-        Health -= damage; // Уменьшаем здоровье на полученный урон
-        if (Health < 0) Health = 0;  // Если здоровье ниже 0, присваиваем ему 0
+        Health -= damage; 
+        if (Health < 0) Health = 0;  
     }
-    // Метод смерти игрока
+    
     public void die() 
     {
-        Health = 0; // Устанавливаем здоровье в 0
+        Health = 0; 
     }
-    // Метод лечения игрока
+    
     public void Heal(int amount) 
     {
-        Health += amount; // Увеличиваем здоровье на amount(на количество Hp) 
-        if (Health > MaxHealth) // Если здоровье по итогу хилла будет больше чем максимальное
+        Health += amount; 
+        if (Health > MaxHealth) 
         {
-            Health=MaxHealth; // То присваиваем здоровью максимально возможное
+            Health=MaxHealth; 
         }
     }
      public void LevelUp()
@@ -93,49 +95,43 @@ public class Player
                                        
         if (Level < 60)
         {
-            Level++;                                       // Увеличиваем уровень на 1
-            MaxHealth += 10;                               // Увеличиваем максимальное здоровье на 10
-            AttackPower += 2;                              // Увеличиваем силу атаки на 2
-            Health = MaxHealth;                            // Восстанавливаем здоровье до максимума
-            ExpToNextLevel = (int)(ExpToNextLevel * 1.5);  // Увеличиваем требуемый опыт в 1.5 раза
+            Level++;                                       
+            MaxHealth += 10;                              
+            AttackPower += 2;                              
+            Health = MaxHealth;                            
+            ExpToNextLevel = (int)(ExpToNextLevel * 1.5);  
 
-            // Выводим сообщение о повышении уровня
+            
             Console.WriteLine($"УРОВЕНЬ ПОВЫШЕН! Теперь уровень {Level}!");
             Console.WriteLine($"Макс. здоровье: +10 | Атака: +2");
         }
-        else  // Максимальный уровень - 60
+        else  
         {
             Console.WriteLine($"У вас максимальный уровень!");
         }       
-
-        
-
-        
     }
-    // Метод добавления опыта
+    
     public void AddExp(int amount)
     {
-        Exp += amount;                           // Добавляем полученный опыт
-        Console.WriteLine($"+{amount} опыта!");   // Выводим сообщение
-
-        // Проверяем, не повысился ли уровень несколько раз
-        while (Exp >= ExpToNextLevel)              // Пока опыта достаточно для повышения
+        Exp += amount;                           
+        Console.WriteLine($"+{amount} опыта!");   
+        
+        while (Exp >= ExpToNextLevel)              
         {
-            Exp -= ExpToNextLevel;                  // Вычитаем потраченный опыт
-            LevelUp();                               // Повышаем уровень
+            Exp -= ExpToNextLevel;                 
+            LevelUp();                             
         }
     }
-        // Метод для отображения прогресс-бара опыта(потом допишу, пока что не придумал нормальную концепцию)
-    //public string GetExpBar()
-    //{
+        public string GetExpBar()
+        {
        
-    //}
+        }
 }
 public class Locations
 {
     
 }
-// предметы 
+
 public class Item
 {
     public string Name;
@@ -145,16 +141,17 @@ public class Item
     
     public Item(string name,int price,int attack,int level)
     {
-        Name = name; // Название предмета
-        Price = price; // Цена предмета
-        Attack= attack; // Сила Атаки предмета
-        Level = level; // Начальный Уровень предмета
+        Name = name; 
+        Price = price; 
+        Attack= attack; 
+        Level = level; 
         
     }
 }
 
 public class Enemy
 {
+    
     //ДОБАВИЛ FRANIK747 151-168
     public string Name;
     public int HP;

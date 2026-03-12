@@ -148,7 +148,19 @@ public class Locations
 }
 public class Item
 {
-
+    public string Name;
+    public int Price;
+    public int Attack;
+    public int Level;
+    public float Weight;
+    public Item(string name,int price,int attack,int level,float weight)
+    {
+        Name = name; // Название 
+        Price = price; // Цена
+        Attack= attack; // Сила Атаки
+        Level = level; // Начальный Уровень
+        Weight = weight; // вес
+    }
 }
 
 public class Enemy

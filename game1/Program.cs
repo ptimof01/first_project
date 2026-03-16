@@ -16,8 +16,8 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace TextRPG
 {
- class Program
- {
+class Program
+{
     static void Main()
     {
         Console.WriteLine("----Добро пожаловать в сногсшибательную игру 'УльтраМегаГигаХроноРазлом: Эпоха Древних Богов и Великих Королевств----'!\n");
@@ -52,6 +52,6 @@ namespace TextRPG
         }
         
     }
- }
+}
 }
 

@@ -113,32 +113,60 @@ namespace pwned
             Console.WriteLine("Игра сохранена");
         }
     
-        public static Player LoadGame()
-        {
-            if (!File.Exists(savePath)) 
-
-            return null;
+        public static Player? LoadGame() 
+{
+    if (!File.Exists(savePath))
+    {
+        return null;  
+    }
+    
+    using (StreamReader reader = new StreamReader(savePath))
+    {
+       
+        string? name = reader.ReadLine();
+        string? levelStr = reader.ReadLine();
+        string? expStr = reader.ReadLine();
+        string? goldStr = reader.ReadLine();
+        string? healthStr = reader.ReadLine();
+        string? maxHealthStr = reader.ReadLine();
+        string? attackPowerStr = reader.ReadLine();
         
-            using(StreamReader reader = new StreamReader(savePath)) 
-            {
-                string name = reader.ReadLine();
-                int level = int.Parse(reader.ReadLine());
-                int exp = int.Parse(reader.ReadLine());
-                int gold = int.Parse(reader.ReadLine());
-                int health = int.Parse(reader.ReadLine());
-                int maxHealth = int.Parse(reader.ReadLine());
-                int attackPower = int.Parse(reader.ReadLine());
-
-                return new Player(name)
-                {
-                    Level = level,
-                    Exp = exp,
-                    Gold = gold,
-                    Health = health,
-                    MaxHealth = maxHealth,
-                    AttackPower = attackPower
-                };
-            }
+       
+        if (name == null || levelStr == null || expStr == null || goldStr == null || 
+            healthStr == null || maxHealthStr == null || attackPowerStr == null)
+        {
+            Console.WriteLine("Ошибка: файл сохранения поврежден");
+            return null;
         }
+        
+        
+        if (!int.TryParse(levelStr, out int level) ||
+            !int.TryParse(expStr, out int exp) ||
+            !int.TryParse(goldStr, out int gold) ||
+            !int.TryParse(healthStr, out int health) ||
+            !int.TryParse(maxHealthStr, out int maxHealth) ||
+            !int.TryParse(attackPowerStr, out int attackPower))
+        {
+            Console.WriteLine("Ошибка: неверный формат данных в файле сохранения");
+            return null;
+        }
+        
+        
+        if (string.IsNullOrEmpty(name))
+        {
+            name = "Безымянный";
+        }
+        
+        Player player = new Player(name);
+        player.Level = level;
+        player.Exp = exp;
+        player.Gold = gold;
+        player.Health = health;
+        player.MaxHealth = maxHealth;
+        player.AttackPower = attackPower;
+        
+        return player;
+    }
+}
     }
 }

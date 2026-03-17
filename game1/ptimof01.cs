@@ -6,12 +6,5 @@ using bobeko;
 
 namespace ptimof01
 {
-    static void SaveGame()
-        {
-            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string filePath = Path.Combine(desktop, "Save.txt");
-            string content;
-            File.WriteAllText(filePath, content);
-           // 
-        }//
+   
 }

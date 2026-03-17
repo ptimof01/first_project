@@ -20,7 +20,8 @@ class Program
 {
     static Player currentPlayer = null;
     static void Main()
-    { while (true)
+    { 
+        while (true)
         {
             Console.Clear();
             Console.WriteLine("----Добро пожаловать в сногсшибательную игру 'УльтраМегаГигаХроноРазлом: Эпоха Древних Богов и Великих Королевств----'!\n");
@@ -41,10 +42,12 @@ class Program
         {
             switch (choise)
             {
-                case 1:     StartNewGame();
+                case 1:     
+                    StartNewGame();
                 break;
 
-                case 2:if (currentPlayer != null);
+                case 2:
+                    if (currentPlayer != null);
                        // OpenShop();
                     else
                         Console.WriteLine("Сначала начните новую игру или загрузите сохранение!");
@@ -52,7 +55,7 @@ class Program
                 
 
                 case 3:
-                   // LoadGame();
+                    pwned.SaveSys.LoadGame();
                 break;
 
                 case 4:
@@ -62,11 +65,13 @@ class Program
                         {
                             Console.WriteLine("Твоя воля - закон!");
                             Environment.Exit(0);
-                        }break;
+                        }
+                    break;
             }
             Console.WriteLine("\nНажмите любую клавишу для продолжения...");
             Console.ReadKey();
-        }   static void StartNewGame()
+        }   
+        static void StartNewGame()
         {
             Console.Clear();
             Console.Write("Введите имя:");

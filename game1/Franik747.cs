@@ -15,9 +15,8 @@ namespace Franik747
         public int Damage { get; set; }
         public int ExpDrop { get; set; } 
         public int GoldDrop { get; set; }
-        public string[] Replic { get; set; } 
 
-        public Enemy(string name, int hp, int damage, int expDrop, int goldDrop, string[] replic = null)
+        public Enemy(string name, int hp, int damage, int expDrop, int goldDrop)
         {
             Name = name;
             HP = hp;
@@ -25,7 +24,7 @@ namespace Franik747
             Damage = damage;
             ExpDrop = expDrop;
             GoldDrop = goldDrop;
-            Replic = replic ?? new string[] { "..." }; 
+           
         }
 
         public void TakeDamage(int damage)
@@ -37,14 +36,6 @@ namespace Franik747
         public bool IsAlive()
         {
             return HP > 0;
-        }
-
-        public string GetRandomReplic()
-        {
-            if (Replic == null || Replic.Length == 0)
-                return "...";
-            Random rnd = new Random();
-            return Replic[rnd.Next(Replic.Length)];
         }
     }
 }

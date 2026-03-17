@@ -258,8 +258,45 @@ namespace TextRPG
         }
     }
 
+public class Weapon : Items
+    {
+    public int Damage;
+    public Weapon(string name, int price, int effect, string description = "",int damage)
+        {
+        Name=name;
+        Price = price;
+        Effect = effect;
+        Description = description;
+        Damage=damage;
+        }
+    }
+public class HealingPotion : Items
+    {
+    public int Health;
+    public Potion(string name, int price, int effect, string description = "",int health)
+        {
+        Name=name;
+        Price = price;
+        Effect = effect;
+        Description = description;
+        Health=health;
+        }
+    }
+    public class PoisonPotion : Items
+    {
+    public int Poisoning;
+    public PoisonPotion(string name, int price, int effect, string description = "",int poisoning)
+        {
+        Name=name;
+        Price = price;
+        Effect = effect;
+        Description = description;
+        Poisoning=poisoning;
+        }
+    }
     public class Shop
     {
+
         public string Name { get; set; }
         public string Owner { get; set; }
         public List<Items> Inventory { get; set; }
@@ -277,8 +314,12 @@ namespace TextRPG
             Inventory.Add(new Items("Малое зелье здоровья", 25, 30, "Восстанавливает 30 HP"));
             Inventory.Add(new Items("Среднее зелье здоровья", 45, 60, "Восстанавливает 60 HP"));
             Inventory.Add(new Items("Большое зелье здоровья", 80, 100, "Восстанавливает 100 HP"));
+            Inventory.Add(new Items("Малое зелье отравления", 24, -25, "Забирает 25 HP"));
+            Inventory.Add(new Items("Среднее зелье отравления", 44, -40, "Забирает 40 HP"));
+            Inventory.Add(new Items("Большое зелье отравления", 79, -50, "Забирает 50 HP"));
             Inventory.Add(new Items("Ржавый меч", 50, 5, "+5 к атаке"));
             Inventory.Add(new Items("Стальной меч", 120, 10, "+10 к атаке"));
+            Inventory.Add(new Items("Топор", 150, 12, "+12 к атаке"));
             Inventory.Add(new Items("Двуручный меч", 250, 20, "+20 к атаке"));
             Inventory.Add(new Items("Кожаная броня", 80, 20, "+20 к макс. здоровью"));
             Inventory.Add(new Items("Кольчуга", 200, 40, "+40 к макс. здоровью"));

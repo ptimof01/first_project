@@ -12,8 +12,6 @@ using delta;
 using bobeko;
 using System.Security.Cryptography.X509Certificates;
 
-
-
 namespace TextRPG
 {
 class Program
@@ -28,7 +26,7 @@ class Program
             Console.WriteLine("1.Игра");
             Console.WriteLine("2.Магазин");
             Console.WriteLine("3.Загрузить игру");
-            Console.WriteLine("4.Выйти из игры");
+            Console.WriteLine("4.Сохранить и выйти");
 
                 int firstChoise;
                 if (int.TryParse(Console.ReadLine(), out firstChoise))
@@ -53,19 +51,23 @@ class Program
                         Console.WriteLine("Сначала начните новую игру или загрузите сохранение!");
                 break;
                 
-
                 case 3:
                    // LoadGame();
                 break;
 
                 case 4:
-                    Console.WriteLine("Уверен? y/n");
+                    Console.WriteLine("Сохранить и выйти? y/n");
                     string exitChoise = Console.ReadLine();
                     if(exitChoise == "y")
                         {
-                            Console.WriteLine("Твоя воля - закон!");
+                            SaveGame(); //дописать, какие переменные сохранять
+                            Console.WriteLine("Твоя воля - закон, игра сохранена!");
                             Environment.Exit(0);
                         }
+                    else
+                    {
+                        //написать, что будет при отказе выхода из игры
+                    }
                 break;
             }
             Console.WriteLine("\nНажмите любую клавишу для продолжения...");

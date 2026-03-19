@@ -1,11 +1,28 @@
+using Franik747;
 using System;
-using pwned;
+using System.Runtime.InteropServices;
+/*using pwned;
 using vano123123;
 using ptimof01;
 using delta;
 using bobeko;
+*/
 namespace Franik747
 {
+   
+    public class Location
+    {
+        public string name;
+        public string discript;//описание (побольше воды)
+        public List<string> PossibleActions;//лист действий в локации, типо при вводе или выборе объекта листа тебе выдают стишок,либо отправляют бить других
+        public List<Enemy> enenmys; //он содержит противников в локации
+        public Location(string _name,string _discript)
+        {
+            name = _name;
+            discript = _discript;
+        }
+    }
+    
     public class Enemy
     {
         public string Name { get; set; }
@@ -49,7 +66,7 @@ namespace Franik747
             return Replic[rnd.Next(Replic.Length)];
         }
     }
-            class Program//cоздал потому что без него не регало
+            class Program
         {
             static void Main()
             {
@@ -59,7 +76,8 @@ namespace Franik747
                 Enemy Priests_of_the_Dark_Gods = new Enemy("жрецы темных богов,защищающие короля", 120, 120, 20, 50, 25);
                 Enemy event_enemy = new Enemy("редкое существо при уничтожении которого - получаешь больше обычного", 1, 1, 1, 100, 50);
                 Enemy franik = new Enemy("король королевства разбитого разума", 150, 150, 30, 75, 50);
+
+            Location kingdom_franik = new Location("королевство франика", "вы пришли в рандомное место и что-то чувствуете");
             }
         }
     }
- 
